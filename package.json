@@ -1,7 +1,15 @@
 {
-  "name": "node-utimensat",
+  "name": "utimensat",
   "version": "0.1.0",
   "description": "A minimal synchronous Node.js wrapper for utimensat(2)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pjincz/node-utimensat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pjincz/node-utimensat/issues"
+  },
+  "homepage": "https://github.com/pjincz/node-utimensat#readme",
   "main": "index.js",
   "types": "index.d.ts",
   "files": ["index.js", "index.d.ts", "binding.gyp", "src/"],
