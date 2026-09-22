@@ -1,0 +1,16 @@
+{
+  "name": "node-utimensat",
+  "version": "0.1.0",
+  "description": "A minimal synchronous Node.js wrapper for utimensat(2)",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": ["index.js", "index.d.ts", "binding.gyp", "src/"],
+  "gypfile": true,
+  "scripts": {
+    "install": "node-gyp rebuild",
+    "build": "node-gyp rebuild",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=18" },
+  "os": ["linux", "darwin", "freebsd", "openbsd", "netbsd"]
+}
