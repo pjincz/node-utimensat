@@ -12,11 +12,11 @@
   "homepage": "https://github.com/pjincz/node-utimensat#readme",
   "main": "index.js",
   "types": "index.d.ts",
-  "files": ["index.js", "index.d.ts", "binding.gyp", "src/"],
+  "files": ["index.js", "index.d.ts", "binding.gyp", "src/", "scripts/"],
   "gypfile": true,
   "scripts": {
-    "install": "node-gyp rebuild",
-    "build": "node-gyp rebuild",
+    "install": "node scripts/build.js",
+    "build": "node scripts/build.js",
     "test": "node --test"
   },
   "engines": { "node": ">=18" },

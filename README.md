@@ -8,7 +8,7 @@ update the link itself and also works with regular files and directories.
 Both functions accept the same timestamp formats.
 
 ```js
-const utimensat = require('node-utimensat');
+const utimensat = require('utimensat');
 
 utimensat('./example.txt', [1700000000, 123456789], 1700000001.5);
 // Preserve atime and update only mtime
@@ -19,7 +19,7 @@ utimensat('./example.txt', null, new Date('2023-11-14T22:13:20.123Z'));
 utimensat('./example.txt');
 
 // Named exports are also available
-const { lutimensat } = require('node-utimensat');
+const { lutimensat } = require('utimensat');
 lutimensat('./link', null, [1700000002, 42]);
 ```
 
@@ -59,7 +59,13 @@ npm install
 npm test
 ```
 
-If matching Node.js headers are already installed on your system, you can use
-`npm install --nodedir=/usr` to avoid downloading headers.
+The build script automatically checks `include/node` under the running Node.js
+installation prefix (including the resolved executable path). If the headers
+match the running Node.js version exactly, it uses them without downloading.
+Otherwise, node-gyp uses its normal header cache or downloads the required version.
+
+Explicit node-gyp settings take precedence. To select headers manually, use
+`npm_package_config_node_gyp_nodedir=/path/to/node npm install`, or
+`npm run build -- --nodedir=/path/to/node`.
 
 Implemented using [Node-API](https://nodejs.org/api/n-api.html).
